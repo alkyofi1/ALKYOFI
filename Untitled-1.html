@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية لـ رحاب الصالح</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        :root {
+            --pink: #f8c8dc;
+            --dark-pink: #e75480;
+            --purple: #b399d4;
+            --gold: #FFD700;
+            --light: #fff9fb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 100%;
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            opacity: 0;
+            animation: float 6s ease-in infinite;
+            font-size: 1.5rem;
+            color: var(--dark-pink);
+        }
+        
+        .gift-box {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-pink);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+        }
+        
+        .moon-text {
+            font-size: 2rem;
+            color: var(--purple);
+            margin: 2rem 0;
+            padding: 1rem;
+            border-radius: 15px;
+            background: linear-gradient(to right, rgba(248, 200, 220, 0.3), rgba(179, 153, 212, 0.3));
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .verse {
+            font-size: 1.5rem;
+            color: var(--dark-pink);
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+        
+        img.gift-image {
+            max-width: 300px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin: 2rem 0;
+            color: #555;
+        }
+        
+        .signature {
+            font-style: italic;
+            margin-top: 2rem;
+            color: var(--purple);
+            font-size: 1.3rem;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+                top: 100%;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-500px) rotate(360deg);
+                opacity: 0;
+                top: -10%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .moon-text {
+                font-size: 1.5rem;
+            }
+            
+            .verse {
+                font-size: 1.2rem;
+            }
+            
+            img.gift-image {
+                max-width: 200px;
+            }
+        }
+        
+        /* Animation for floating elements */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hearts" id="hearts"></div>
+        
+        <div class="gift-box">
+            <h1 class="floating">رَحَاب الصَّالِح</h1>
+            
+            <div class="moon-text">
+                قـمر بــني صـاالح 3:13
+            </div>
+            
+            <img src="https://placehold.co/400x300/pink/white?text=For+Rehab" alt="هدية لرحاب الصالح مع صورة صندوق هدايا وردي ومزين بورود" class="gift-image floating">
+            
+            <p class="message">
+                إلى من تملأ الدنيا جمالاً وأناقةً، إلى القمر الساطع الذي ينير حياتي بوجوده، 
+                هذه هدية صغيرة تعبر عن مدى تقديري وحبي لك. أتمنى أن تنالي إعجابك كما تنالين إعجاب كل من حولك.
+            </p>
+            
+            <div class="verse">
+                "كل يومٍ يمر معك هو عيدٌ وجمال"
+            </div>
+            
+            <div class="signature">
+                مع أطيب التمنيات لكِ بسعادة دائمة
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        const heartsContainer = document.getElementById('hearts');
+        const heartCount = 30;
+        
+        for (let i = 0; i < heartCount; i++) {
+            setTimeout(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heartsContainer.appendChild(heart);
+            }, i * 300);
+        }
+        
+        // Floating effect for gift image
+        const giftImage = document.querySelector('.gift-image');
+        let floating = true;
+        
+        function toggleFloating() {
+            if (floating) {
+                giftImage.classList.remove('floating');
+            } else {
+                giftImage.classList.add('floating');
+            }
+            floating = !floating;
+            setTimeout(toggleFloating, 6000);
+        }
+        
+        setTimeout(toggleFloating, 6000);
+    </script>
+</body>
+</html>
